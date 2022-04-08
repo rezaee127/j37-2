@@ -15,9 +15,10 @@ class MainViewModel(app:Application):AndroidViewModel(app) {
     init{
         DoctorRepository.initDB(app.applicationContext)
         doctorList.value=DoctorRepository.getDoctorList()
+
     }
 
     fun getDoctor(id:Int){
-
+        doctorById.value=DoctorRepository.getDoctor(id)
     }
 }
